@@ -21,7 +21,7 @@ Under "Profile Path" copy the end of the pathway: /Users/[YOUR USERNAME]/Library
 In the above example, the proper profile name is: "Profile 5"
 
 In each /bin/zsh, you will need to update the profile name to match yours. 
-For example, in the top /bin/zsh:
+For example, in the Top /bin/zsh:
 
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --profile-directory="Default"
 
