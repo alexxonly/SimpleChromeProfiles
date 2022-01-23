@@ -1,34 +1,37 @@
-This is a very simple workflow that will open different chrome profiles using a simple Alfred command. Each time you use the keyword, a new chrome window for the specified profile will open.
+README / Help with Simple Customization
 
-Using the command "cp " + # argument, you can open a new window withing a specified chrome profile
+I was inspired to create my first workflow to open a new window in a specific Chrome Profile since I work between several profiles and have certain permissions in certain profiles.
 
-The worflow is built with arguments 1, 2 and 3. "cp 1" opens the first chrome profile (usually called "Default" by chrome), "cp 2" the second (called Profile 1 by chrome) and so on.
+This simple workflow was inspired by @Balverine commenting on another Chrome profiles workflow that no longer works.
 
+--How It Works--
+
+This is a very simple workflow that will open different chrome profiles using a simple Alfred command. Each time you use the command, a new chrome browser window will open for the specified profile.
+
+The workflow is built with pre-defined arguments 1, 2 and 3. "cp 1" opens the first chrome profile (usually called "Default" by chrome), "cp 2" the second (called Profile 1 by chrome) and so on.
+
+[cmd arg] = [chrome profile name]
 cp 1 = Default
 cp 2 = Profile 1
 cp 3 = Profile 2
 
-Customization Steps (if needed)
-This workflow will require some simple customization to function properly if your Chrome-assigned profile names differ from above or you want to change the associated argument (eg you want Profile 2 to open with "cp 1")
+This workflow will require some simple customization to function properly with your Chrome-assigned profile names IF they differ from the above or you want to change the associated argument (i.e. you want Profile 2 to open with cp 1)
 
-You will need to change the [Profile #] in each script to match the chrome created profile name you want to open. This is <b>NOT</b> the chrome profile name you created in Chrome.
+--Find your Chrome Profile Name--
 
-You can find and pull the proper chrome-assigned profile name by naviagting to: 
-chrome://version/
+In the workflow, you will need to change the [Profile #] in each Run Script to match the Chrome-created profile name you want to open. The "profile name" used in this workflow is NOT the chrome profile name you created/defined; it is the name in the profile pathway and assigned by Chrome.
 
-Under "Profile Path" copy the end of the pathway: /Users/[YOUR USERNAME]/Library/Application Support/Google/Chrome/Profile 5
+To find the proper profile name for each Chrome Profile:
+Step 1: open chrome://version/ while in each Chrome profile you have
 
+Step 2: Find "Profile Path" and copy the end of the pathway: /Users/[YOUR USERNAME]/Library/Application Support/Google/Chrome/Profile 5 
 In the above example, the proper profile name is: "Profile 5"
 
-In each /bin/zsh, you will need to update the profile name to match yours. 
-For example, in the Top /bin/zsh:
+Step 3: In the workflow, you will need to update the profile name in each /bin/zsh to match yours.
 
+For example, in the top /bin/zsh:
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --profile-directory="Default"
-
-becomes
-
+changes to
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --profile-directory="Profile 5"
 
-I hope those of you will multiple profiles will find this useful and others will improve on the functionality!
-
-A special thank you to Alfred Forum member Balverine for the inspiration!
+I hope those of you will multiple profiles will find this useful and others will take it and improve on the functionality. I'm sure the workflow could be expanded to do a lot more things.
