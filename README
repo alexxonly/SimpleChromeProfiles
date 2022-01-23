@@ -1,0 +1,34 @@
+This is a very simple workflow that will open different chrome profiles using a simple Alfred command. Each time you use the keyword, a new chrome window for the specified profile will open.
+
+Using the command "cp " + # argument, you can open a new window withing a specified chrome profile
+
+The worflow is built with arguments 1, 2 and 3. "cp 1" opens the first chrome profile (usually called "Default" by chrome), "cp 2" the second (called Profile 1 by chrome) and so on.
+
+cp 1 = Default
+cp 2 = Profile 1
+cp 3 = Profile 2
+
+Customization Steps (if needed)
+This workflow will require some simple customization to function properly if your Chrome-assigned profile names differ from above or you want to change the associated argument (eg you want Profile 2 to open with "cp 1")
+
+You will need to change the [Profile #] in each script to match the chrome created profile name you want to open. This is <b>NOT</b> the chrome profile name you created in Chrome.
+
+You can find and pull the proper chrome-assigned profile name by naviagting to: 
+chrome://version/
+
+Under "Profile Path" copy the end of the pathway: /Users/[YOUR USERNAME]/Library/Application Support/Google/Chrome/Profile 5
+
+In the above example, the proper profile name is: "Profile 5"
+
+In each /bin/zsh, you will need to update the profile name to match yours. 
+For example, in the top /bin/zsh:
+
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --profile-directory="Default"
+
+becomes
+
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --profile-directory="Profile 5"
+
+I hope those of you will multiple profiles will find this useful and others will improve on the functionality!
+
+A special thank you to Alfred Forum member Balverine for the inspiration!
